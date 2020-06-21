@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML>
+<persistence>
+	<persistence-unit name="MailToDo">
+		<jta-data-source>java:jboss/datasources/MailToDo</jta-data-source>
+		<properties>
+			<property
+				name="javax.persistence.schema-generation.database.action"
+				value="update"
+			/>
+		</properties>
+	</persistence-unit>
+</persistence>
