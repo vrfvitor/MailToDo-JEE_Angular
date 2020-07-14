@@ -6,8 +6,12 @@
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
-				value="update"
+				value="create-drop"
 			/>
+			<property 
+				name="javax.persistence.sql-load-script-source"
+          		value="META-INF/sql/data.sql"
+          	 />
 		</properties>
 	</persistence-unit>
 </persistence>

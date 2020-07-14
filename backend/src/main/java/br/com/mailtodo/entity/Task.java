@@ -15,7 +15,8 @@ public class Task {
 	private Integer id;
 	private String title;
 	private String description;
-	
+	private boolean done = false;
+
 	@Enumerated(EnumType.STRING)
 	private Priority priority;
 
@@ -25,6 +26,14 @@ public class Task {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public boolean isDone() {
+		return done;
+	}
+	
+	public void setDone(boolean done) {
+		this.done = done;
 	}
 
 	public String getTitle() {
