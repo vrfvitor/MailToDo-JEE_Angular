@@ -1,0 +1,13 @@
+<mat-card >
+    <mat-card-header class="mb-1">
+        <div mat-card-avatar class="priority" [style.background-color]="getColor(task.priority)"></div>
+        <mat-card-title>{{ task.title }}</mat-card-title>
+        <mat-card-subtitle>{{ task.priority }} Priority</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="ml-4 mb-0">
+        <p class="font-1">{{ task.description }}</p>
+    </mat-card-content>
+    <mat-card-actions fxFlexAlign="end" align="end" class="no-outline">
+        <ng-content></ng-content>
+    </mat-card-actions>
+</mat-card>

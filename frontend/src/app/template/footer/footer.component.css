@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(240, 240, 240, 0.952);
+
+    height: 3.2rem;
+}
+
+.footer > span {
+    font-size: 1.05rem;
+    font-weight: 300;
+}
+

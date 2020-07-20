@@ -1,0 +1,29 @@
+<div class="mt-4 mb-4">
+    <h1>{{title}}</h1>
+    <mat-divider class="mb-3"></mat-divider>
+    
+    <div *ngIf="!tasks?.length; else showTasks">
+            <h4 class="text-center text-muted">No Tasks in Here</h4>
+    </div>
+
+    <ng-template #showTasks>
+        <div *ngFor="let task of tasks" class="mb-2">
+            <app-task [task]="task">
+                <div *ngIf="task.done; else undoneButtons">
+                    <button mat-button class="font-1" (click)="delete(task.id)">Delete</button>
+                    <button mat-button class="font-1" (click)="setDone(task.id, false)">Undo!</button>
+                </div>
+                <ng-template #undoneButtons>
+                    <div>
+                        <button mat-button class="font-1" [matMenuTriggerFor]="menu">Options</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item class="font-1" (click)="update(task.id)">Update</button>
+                            <button mat-menu-item class="font-1" (click)="delete(task.id)">Delete</button>
+                        </mat-menu>
+                        <button mat-button class="font-1" (click)="setDone(task.id)">Done!</button>
+                    </div>
+                </ng-template>
+            </app-task>
+        </div>
+    </ng-template>
+</div>

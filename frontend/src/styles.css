@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: rgb(250, 250, 250);
+}
+
+.red {
+    color: rgb(231, 0, 0);
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.v-bottom {
+    vertical-align: sub;
+}
+
+.font-1 {
+    font-size: 1.0rem;
+}
+
+a {
+    text-decoration: none;
+}

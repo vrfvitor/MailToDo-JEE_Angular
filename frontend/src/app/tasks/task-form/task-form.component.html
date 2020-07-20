@@ -1,0 +1,36 @@
+<h1 mat-dialog-title *ngIf="task.id; else newTask">Update Task</h1>
+<ng-template #newTask>
+    <h1 mat-dialog-title>New Task</h1>
+</ng-template>
+<div mat-dialog-content>
+    <form>
+        <mat-form-field class="w-100 mr-2">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="task.title" name="title">
+        </mat-form-field>
+
+        <mat-form-field class="w-100 mr-2">
+            <mat-label>Priority</mat-label>
+            <mat-select [(value)]="task.priority">
+                <mat-option value="LOW">Low</mat-option>
+                <mat-option value="MEDIUM">Medium</mat-option>
+                <mat-option value="HIGH">High</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+            <mat-label>Description</mat-label>
+            <textarea
+                name="description"
+                matInput [(ngModel)]="task.description"
+                placeholder="What need to be done..."
+            ></textarea>
+        </mat-form-field>
+
+    </form>
+</div>
+<div mat-dialog-actions class="mb-1">
+    <button mat-raised-button (click)="onNoClick()">Cancel</button>
+    <span class="spacer"></span>
+    <button mat-raised-button [mat-dialog-close]="task" cdkFocusInitial color="primary">Ok</button>
+</div>
