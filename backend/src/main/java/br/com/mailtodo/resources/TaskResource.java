@@ -14,7 +14,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -39,12 +38,17 @@ public class TaskResource {
 		return Response.ok(dao.findAll()).build();
 	}
 
+	@GET
+	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response show(@PathParam("id") Integer id) {
+		return Response.ok(dao.findById(id)).build();
+	}
+
 	@POST
 	@Transactional
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(@Valid @RequestBody TaskForm form, @Context UriInfo uriInfo) {
-		System.out.println(form);
-		System.out.println("TASK/POST");
 		Task task = new Task();
 		form.transferDataTo(task);
 		dao.save(task);
@@ -70,8 +74,9 @@ public class TaskResource {
 
 	@PUT
 	@Path("/{id}")
+	@Transactional
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response show(@PathParam("id") Integer id, @QueryParam("done") boolean done) {
+	public Response show(@PathParam("id") Integer id, boolean done) {
 		Optional<Task> optional = dao.findById(id);
 		if (optional.isPresent()) {
 			Task task = optional.get();
@@ -85,7 +90,6 @@ public class TaskResource {
 	@Path("/{id}")
 	@Transactional
 	public Response delete(@PathParam("id") Integer id) {
-		System.out.println("delete");
 		Optional<Task> optional = dao.findById(id);
 		if (optional.isPresent()) {
 			dao.delete(optional.get());

@@ -15,7 +15,6 @@ public class MailMessage {
 	@Override
 	public String toString() {
 		return String.format(
-				"<hr>" 		 +
 				"<h4>%s</h4>"+
 				"<p>%s</p>"  +
 				"<hr>"

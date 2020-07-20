@@ -12,7 +12,7 @@ import br.com.mailtodo.entity.Task;
 @Singleton
 public class EmailSenderService {
 	
-	private String recipient = "person@mail.com";
+	private String recipient;
 	
 	@EJB
 	private EmailSender sender;
@@ -20,9 +20,9 @@ public class EmailSenderService {
 	@EJB
 	private TaskDao dao;
 	
-	@Schedule(hour = "*",minute = "*")
+//	@Schedule(hour = "*",minute = "*")
 	public void sendEmail() {
-		if(!this.recipient.isEmpty()) {
+		if(recipient != null) {
 			List<Task> tasksToMail = dao.findTasksToMail();
 			if (!tasksToMail.isEmpty()) {
 				sender.sendEmail(recipient, tasksToMail);							
@@ -32,6 +32,10 @@ public class EmailSenderService {
 	
 	public void setRecipient(String recipient) {
 		this.recipient = recipient;
+	}
+
+	public String getRecipient() {
+		return this.recipient;
 	}
 	
 }
