@@ -20,7 +20,7 @@ public class EmailSenderService {
 	@EJB
 	private TaskDao dao;
 	
-//	@Schedule(hour = "*",minute = "*")
+	@Schedule(hour = "*",minute = "*")
 	public void sendEmail() {
 		if(recipient != null) {
 			List<Task> tasksToMail = dao.findTasksToMail();
