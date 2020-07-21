@@ -22,8 +22,10 @@ export class TaskContainerComponent {
   ) { }
 
   delete(id: number) {
-    this.service.delete(id).subscribe(() => { this.service.showMessage('Task deleted successfully.') });
-    this.warnChange.emit('');
+    this.service.delete(id).subscribe(() => { 
+      this.service.showMessage('Task deleted successfully.')
+      this.warnChange.emit('');
+    });
   }
 
   update(id: number) {
@@ -41,15 +43,19 @@ export class TaskContainerComponent {
       dialogRef.afterClosed().subscribe((resultTask: Task) => {
         if (!resultTask) return;
         console.log(resultTask);
-        this.service.update(resultTask).subscribe(() => { this.service.showMessage('Task updated successfully') });
-        this.warnChange.emit('');
+        this.service.update(resultTask).subscribe(() => {
+          this.service.showMessage('Task updated successfully')
+          this.warnChange.emit('');
+        });
       });
     });
   }
 
   setDone(id: number, done: boolean = true) {
-    this.service.setDone(id, done).subscribe(() => { this.service.showMessage('Task set as ' + (done ? 'done!' : 'undone!')) });
-    this.warnChange.emit('');
+    this.service.setDone(id, done).subscribe(() => {
+      this.service.showMessage('Task set as ' + (done ? 'done!' : 'undone!'))
+      this.warnChange.emit('');
+    });
   }
 
 }

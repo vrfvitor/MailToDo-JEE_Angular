@@ -50,7 +50,7 @@ export class TaskService {
     return this.http.put(url, done);
   }
 
-  sendEmail(email: string): Observable<any> {
+  saveEmail(email: string): Observable<any> {
     const url = 'http://localhost:8080/email';
     return this.http.post(url, email);
   }

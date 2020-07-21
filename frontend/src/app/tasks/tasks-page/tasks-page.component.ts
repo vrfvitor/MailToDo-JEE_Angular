@@ -1,8 +1,9 @@
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { TaskFormComponent } from './../task-form/task-form.component';
 import { TaskService } from './../task/task.service';
 import { Task } from './../task/task';
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tasks-page',
@@ -16,8 +17,8 @@ export class TasksPageComponent implements OnInit {
 
   constructor(
     private service: TaskService,
-    public dialog: MatDialog) {
-  }
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.service.read().subscribe(tasks => this.tasks = tasks);
@@ -31,18 +32,19 @@ export class TasksPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((resultTask: Task) => {
       if (!resultTask) return;
-      this.service.create(resultTask).subscribe(() => { this.service.showMessage('Task created successfully') });
-      this.ngOnInit();
+      this.service.create(resultTask).subscribe(() => { 
+        this.service.showMessage('Task created successfully') 
+        this.ngOnInit();
+      });
     });
   }
 
   saveEmail(event: Event) {
     event.preventDefault();
-    this.service.sendEmail(this.email).subscribe();
+    this.service.saveEmail(this.email).subscribe(() => { this.service.showMessage('Email registered successfully') });
   }
 
   changed(): void {
-    console.log('should have refreshed');
     this.ngOnInit();
   }
 
