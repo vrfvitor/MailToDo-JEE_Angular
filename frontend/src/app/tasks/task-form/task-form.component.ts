@@ -14,9 +14,9 @@ export class TaskFormComponent implements OnInit {
   taskForm: FormGroup;
 
   constructor(
+    public fBuilder: FormBuilder,
     public dialogRef: MatDialogRef<TaskFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public task: Task,
-    public fBuilder: FormBuilder
+    @Inject(MAT_DIALOG_DATA) public task: Task
   ) { }
 
   ngOnInit(): void {

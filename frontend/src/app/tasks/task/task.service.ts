@@ -1,8 +1,9 @@
-import { Task, Priorirty } from './task';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
+
+import { Task } from './task';
 
 @Injectable({
   providedIn: 'root'

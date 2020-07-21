@@ -15,11 +15,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { FilterByDonePipe } from './tasks-page/filter-by-done.pipe';
 import { TaskComponent } from './task/task.component';
-import { TaskContainerComponent } from './task-container/task-container.component';
-import { TasksPageComponent } from './tasks-page/tasks-page.component';
+import { FilterByDonePipe } from './tasks-page/filter-by-done.pipe';
 import { TaskFormComponent } from './task-form/task-form.component';
+import { TasksPageComponent } from './tasks-page/tasks-page.component';
+import { TaskContainerComponent } from './task-container/task-container.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +43,8 @@ import { TaskFormComponent } from './task-form/task-form.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatTooltipModule,
     ReactiveFormsModule,
-    MatTooltipModule
   ],
   exports: [TasksPageComponent]
 })

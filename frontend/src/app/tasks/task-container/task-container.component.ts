@@ -1,5 +1,5 @@
 import { TaskService } from './../task/task.service';
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Task } from '../task/task';
 import { EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
