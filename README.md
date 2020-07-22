@@ -12,7 +12,11 @@ MailToDo é um gerenciador de tarefas simples, mas que conta com notificação v
 ## Layout da Aplicação :art:
 
 <p align="center">
-  <img  src="/media/email_sample.png" >
+  <img  src="/media/mailtodo_800.gif" alt="MailToDo Preview">
+</p>
+
+<p align="center">
+  <img  src="/media/email_sample.png" alt="sample email MailToDo">
 </p>
 
 ## Funcionalidades :gear:
@@ -28,7 +32,7 @@ Nesse projeto aproveitei para aplicar vários conhecimentos
   - Novas APIs Optional e Stream
 
 - JEE 8
-  - EJB: aproveitando as vantagens dos Session Beans e @Schedule
+  - EJB: aproveitando as vantagens dos Session Beans e `@Schedule`
   - JAX-RS: implementação das endpoints, configuração do CORS para atender a qualquer request
   - JPA: integração facilitada com o banco de dados - ORM
   - JavaMail: implementação do serviço de envio de email
@@ -55,6 +59,9 @@ Nesse projeto aproveitei para aplicar vários conhecimentos
 
 ## Licença :balance_scale:
 
-The [MIT License](https://opensource.org/licenses/MIT)
+<p align="center">
+          <a href="https://opensource.org/licenses/MIT">The MIT License</a>
+</p>
 
-Copyright :copyright: 2020 - MailToDo
+<p align="center">Copyright :copyright: 2020 - MailToDo</p>
+
