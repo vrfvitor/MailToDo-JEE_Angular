@@ -11,6 +11,10 @@ MailToDo é um gerenciador de tarefas simples, mas que conta com notificação v
 
 ## Layout da Aplicação :art:
 
+<p align="center">
+  <img  src="/media/email_sample.png" >
+</p>
+
 ## Funcionalidades :gear:
 
 :heavy_check_mark: CRUD de Tarefas
@@ -42,8 +46,12 @@ Nesse projeto aproveitei para aplicar vários conhecimentos
 
 ## Desenvolvedor :computer:
 
-| [<img src="https://avatars.githubusercontent.com/vrfvitor" width=115><br><sub>Vitor Rodrigues</sub>](https://www.linkedin.com/in/vrfvitor) | <div length>Conecte-se: <p> <h6>[LinkedIn](https://www.linkedin.com/in/vrfvitor/)</p> <br> <p>[GitHub](https://github.com/vrfvitor)</p> |
-| :---: | :-------------: |
+<img src="https://avatars.githubusercontent.com/vrfvitor" width=115 align="left"/>
+<h4>Vitor Rodrigues Ferreira</h4>
+
+<h5>Conecte-se pelo <a href="https://www.linkedin.com/in/vrfvitor" target="_blank">LinkedIn</a></h4>
+
+<h5>Siga pelo <a href="https://github.com/vrfvitor" target="_blank">GitHub</a>
 
 ## Licença :balance_scale:
 
